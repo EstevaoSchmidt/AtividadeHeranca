@@ -1,10 +1,18 @@
 <?php
 
+require_once("Funcionario.php");
+
 class Comissario extends Funcionario {
 
     private string $servico;
     private string $avaliacao;
     private string $tipoVoo;
+
+    public function __toString()
+    {
+        $dados = sprintf("O comissario %s do voo %d que faz %s, possui uma avaliação %s e faz voos %s", $this->nome, $this->numVoo, $this->servico, $this->avaliacao, $this->tipoVoo);
+        return $dados;
+    }
 
     /**
      * Get the value of servico

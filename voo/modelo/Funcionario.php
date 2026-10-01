@@ -8,12 +8,15 @@ class Funcionario extends Pessoa {
     protected string $nomeCompania;
     protected int $salario;
 
+    
+
+
     /**
      * Get the value of tempoDeVoo
      */
     public function getTempoDeVoo(): int
     {
-            return $this->tempoDeVoo;
+        return $this->tempoDeVoo;
     }
 
     /**
@@ -21,9 +24,9 @@ class Funcionario extends Pessoa {
      */
     public function setTempoDeVoo(int $tempoDeVoo): self
     {
-            $this->tempoDeVoo = $tempoDeVoo;
+        $this->tempoDeVoo = $tempoDeVoo;
 
-            return $this;
+        return $this;
     }
 
     /**
@@ -31,7 +34,7 @@ class Funcionario extends Pessoa {
      */
     public function getNomeCompania(): string
     {
-            return $this->nomeCompania;
+        return $this->nomeCompania;
     }
 
     /**
@@ -39,9 +42,9 @@ class Funcionario extends Pessoa {
      */
     public function setNomeCompania(string $nomeCompania): self
     {
-            $this->nomeCompania = $nomeCompania;
+        $this->nomeCompania = $nomeCompania;
 
-            return $this;
+        return $this;
     }
 
     /**
@@ -49,7 +52,7 @@ class Funcionario extends Pessoa {
      */
     public function getSalario(): int
     {
-            return $this->salario;
+        return $this->salario;
     }
 
     /**
@@ -57,9 +60,8 @@ class Funcionario extends Pessoa {
      */
     public function setSalario(int $salario): self
     {
-            $this->salario = $salario;
+        $this->salario = $salario;
 
-            return $this;
+        return $this;
     }
-
 }

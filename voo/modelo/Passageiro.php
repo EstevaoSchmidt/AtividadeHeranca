@@ -9,6 +9,13 @@ class Passageiro extends Pessoa {
     private string $classe;
     private string $cliente;
 
+    public function __toString()
+    {
+        $dados = sprintf("O cliente %s %s do voo %d que vai para %s na classe %s", $this->cliente, $this->nome, $this->numVoo, $this->destino, $this->classe);
+        return $dados;
+
+    }
+
     /**
      * Get the value of destino
      */

@@ -4,27 +4,16 @@ require_once("Funcionario.php");
 
 class Piloto extends Funcionario {
 
-    private int $TotalHorasVoo;
     private string $avioesPermitidos;
     private string $tipoDeLicenca;
 
-    /**
-     * Get the value of TotalHorasVoo
-     */
-    public function getTotalHorasVoo(): int
+    public function __toString()
     {
-        return $this->TotalHorasVoo;
+        $dados = sprintf("O piloto %s do voo %d que pode voar %s que tem a licença %s", $this->nome, $this->numVoo, $this->avioesPermitidos, $this->tipoDeLicenca);
+        return $dados;
+        
     }
 
-    /**
-     * Set the value of TotalHorasVoo
-     */
-    public function setTotalHorasVoo(int $TotalHorasVoo): self
-    {
-        $this->TotalHorasVoo = $TotalHorasVoo;
-
-        return $this;
-    }
 
     /**
      * Get the value of avioesPermitidos

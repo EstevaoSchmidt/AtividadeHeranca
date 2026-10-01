@@ -8,6 +8,9 @@ class Pessoa {
     protected int $numVoo;
     protected int $horarioDeEmbarque;
 
+    
+
+
     /**
      * Get the value of idade
      */
@@ -97,5 +100,5 @@ class Pessoa {
 
         return $this;
     }
-
+    
 }
