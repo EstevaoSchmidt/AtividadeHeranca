@@ -12,6 +12,7 @@ echo("***Voo Maneiro-Airlines\n");
 echo("(1)Cadastar Pessoa\n");
 echo("(2)Excluir Pessoa\n");
 echo("(3)Listar Pessoas de um Voo\n");
+echo("(4)Totalizar Salario dos Funcionarios de uma compania\n");
 echo("(0)Sair\n");
 $opcao = readline("Informe uma Opção: ");
 
@@ -106,6 +107,25 @@ switch($opcao){
                 }
 
             }
+
+            break;
+
+        case 4:
+
+            $compania = readline("Informe o nome da compania: ");
+            $totalSalario = 0;
+
+            foreach($pessoas as $p){
+
+                if($p->getNomeCompania() == $compania){
+
+                    $totalSalario += $p->getSalario();
+
+                }
+
+            }
+
+            echo "A compania " . $compania . " gasta " . $totalSalario . " R$ com seus funcionarios todos os meses.\n";
 
             break;
 
