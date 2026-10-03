@@ -4,33 +4,34 @@ require_once("Funcionario.php");
 
 class Piloto extends Funcionario {
 
-    private string $avioesPermitidos;
     private string $tipoDeLicenca;
 
     public function __toString()
     {
-        $dados = sprintf("O piloto %s do voo %d que pode voar %s que tem a licença %s", $this->nome, $this->numVoo, $this->avioesPermitidos, $this->tipoDeLicenca);
+        $dados = sprintf("\nPiloto %s do voo %d, que pode voar %s, tem a licença %s.", $this->nome, $this->numVoo, $this->getAvioesPermitidos(), $this->tipoDeLicenca);
         return $dados;
         
     }
 
-
     /**
      * Get the value of avioesPermitidos
      */
-    public function getAvioesPermitidos(): string
+    public function getAvioesPermitidos()
     {
-        return $this->avioesPermitidos;
-    }
 
-    /**
-     * Set the value of avioesPermitidos
-     */
-    public function setAvioesPermitidos(string $avioesPermitidos): self
-    {
-        $this->avioesPermitidos = $avioesPermitidos;
+        if ($this->tipoDeLicenca == "PP") {
 
-        return $this;
+            $dados = "Embraer e Cessna";
+
+            return $dados;
+
+
+        } 
+
+        $dados = "Airbus e Boeing";
+
+        return $dados;
+        
     }
 
     /**

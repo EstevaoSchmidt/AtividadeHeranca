@@ -8,22 +8,23 @@ $pessoas = array();
 
 do {
 
-echo("***Voo Maneiro-Airlines\n");
+echo("\n***Voo Maneiro-Airlines***\n");
 echo("(1)Cadastar Pessoa\n");
 echo("(2)Excluir Pessoa\n");
 echo("(3)Listar Pessoas de um Voo\n");
 echo("(4)Totalizar Salario dos Funcionarios de uma compania\n");
-echo("(0)Sair\n");
+echo("(5)Listar Aviões Permitidos de um piloto\n");
+echo("(0)Sair\n\n");
 $opcao = readline("Informe uma Opção: ");
 
 switch($opcao){
 
     case 1:
 
-        echo("(1)Cadastar Piloto\n");
+        echo("\n(1)Cadastar Piloto\n");
         echo("(2)Cadastar Passageiro\n");
         echo("(3)Cadastar Comissario\n");
-        echo("(0)Sair\n");
+        echo("(0)Sair\n\n");
         $opcao = readline("Informe uma Opção: ");
 
         switch($opcao){
@@ -39,8 +40,7 @@ switch($opcao){
                 $piloto->setTempoDeVoo(readline("Informe a duração do voo: "));
                 $piloto->setNomeCompania(readline("Informe o nome da Compania: "));
                 $piloto->setSalario(readline("Informe o seu salario: "));
-                $piloto->setAvioesPermitidos(readline("Informe os aviões permitidos: "));
-                $piloto->setTipoDeLicenca(readline("Informe o tipo da Licença: "));
+                $piloto->setTipoDeLicenca(readline("Informe o tipo da Licença(Piloto Privado(PP) ou Piloto de Linha Aérea(PLA): "));
                 array_push($pessoas, $piloto);
 
                 break;
@@ -56,7 +56,7 @@ switch($opcao){
                 $passageiro->setDestino(readline("Informe o destino: "));
                 $passageiro->setNomeAssento(readline("Informe o seu Assento: "));
                 $passageiro->setClasse(readline("Informe qual é a sua classe: "));
-                $passageiro->setCliente(readline("Informe o tipo de cliente: "));
+                $passageiro->setCliente(readline("Informe o tipo de cliente(vip, normal, diamante , etc): "));
                 array_push($pessoas, $passageiro);
                 
 
@@ -125,7 +125,23 @@ switch($opcao){
 
             }
 
-            echo "A compania " . $compania . " gasta " . $totalSalario . " R$ com seus funcionarios todos os meses.\n";
+            echo "\nA compania " . $compania . " gasta " . $totalSalario . " R$ com seus funcionarios todos os meses.\n";
+
+            break;
+
+        case 5:
+
+            $cpfPiloto = readline("Informe o cpf do piloto: ");
+
+            foreach($pessoas as $p){
+
+                if($p instanceof Piloto && $p->getCpf() == $cpfPiloto){
+
+                    echo "\nO piloto " . $p->getNome() . " pode voar " . $p->getAvioesPermitidos() . "\n";
+
+                }
+
+            }
 
             break;
 

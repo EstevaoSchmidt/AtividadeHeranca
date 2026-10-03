@@ -10,7 +10,6 @@ class Funcionario extends Pessoa {
 
     
 
-
     /**
      * Get the value of tempoDeVoo
      */

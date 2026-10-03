@@ -11,7 +11,7 @@ class Passageiro extends Pessoa {
 
     public function __toString()
     {
-        $dados = sprintf("O cliente %s %s do voo %d que vai para %s na classe %s", $this->cliente, $this->nome, $this->numVoo, $this->destino, $this->classe);
+        $dados = sprintf("\nCliente %s %s, do voo %d que vai para %s na classe %s.", $this->cliente, $this->nome, $this->numVoo, $this->destino, $this->classe);
         return $dados;
 
     }

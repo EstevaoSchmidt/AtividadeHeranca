@@ -10,7 +10,7 @@ class Comissario extends Funcionario {
 
     public function __toString()
     {
-        $dados = sprintf("O comissario %s do voo %d que faz %s, possui uma avaliação %s e faz voos %s", $this->nome, $this->numVoo, $this->servico, $this->avaliacao, $this->tipoVoo);
+        $dados = sprintf("\nComissario(a) %s do voo %d que faz %s, possui uma avaliação %s e faz voos %s.", $this->nome, $this->numVoo, $this->servico, $this->avaliacao, $this->tipoVoo);
         return $dados;
     }
 
